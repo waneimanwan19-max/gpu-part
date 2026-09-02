@@ -1,0 +1,16 @@
+-- database: ../database.db
+
+SELECT * FROM performance;
+SELECT* FROM gpu
+    WHERE gpu.gpu_id = ?;
+
+
+
+SELECT * FROM gpu
+JOIN performance ON performance.gpu_id=gpu.gpu_id
+JOIN game ON performance.game_id=game.game_id
+WHERE gpu.gpu_id = ?;
+
+
+
+;

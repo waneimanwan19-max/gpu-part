@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{%  block body %}
+
+<h1>
+  <title>GPU list</title>
+</h1>
+
+<table class="w3-table-all">
+    <tr>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Memory size</th>
+
+    </tr>
+    {% for gpu in results %}
+    <tr>
+        <td>{{ gpu[1] }}</td>
+        <td>{{ gpu[2] }}</td>
+        <td>{{ gpu[4] }}</td>
+        
+
+
+    </tr>
+
+
+    {% endfor %}
+
+
+</table>
+
+    {% endblock %}
