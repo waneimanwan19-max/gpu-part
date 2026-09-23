@@ -1,5 +1,29 @@
 {% extends "base.html" %}
-{%  block body %}
 
+{% block body %}
+
+
+
+<div class="two-column">
+
+
+    <img src="{{ gpu[6] }}" alt="{{ gpu[2] }}">
+
+  
+    <div class="info">
+
+        <h1>{{ gpu[2] }}</h1>
+
+        <h1>Brand: {{ gpu[3] }}</h1>
+
+        <h1>Cores: {{ gpu[4] }}</h1>
+
+        <h1>Description</h1>
+
+        <h1>{{ gpu[5] }}</h1>
+
+    </div>
+
+</div>
 
 {% endblock %}

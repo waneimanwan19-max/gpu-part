@@ -1,31 +1,24 @@
 {% extends "base.html" %}
-{%  block body %}
 
-<h1>
-  <title>GPU list</title>
-</h1>
+{% block body %}
 
-<table class="w3-table-all">
-    <tr>
-        <th>Name</th>
-        <th>Brand</th>
-        <th>Memory size</th>
 
-    </tr>
+<div class="three-column">
+
     {% for gpu in results %}
-    <tr>
-        <td>{{ gpu[1] }}</td>
-        <td>{{ gpu[2] }}</td>
-        <td>{{ gpu[4] }}</td>
-        
 
+    <div class="w3-card-4">
 
-    </tr>
+        <!-- the name then the image -->
 
+        <h1>{{ gpu[1] }} {{ gpu[2] }}</h1>
+
+        <img src="{{ gpu[3] }}" alt="{{ gpu[2] }}">
+
+    </div>
 
     {% endfor %}
 
+</div>
 
-</table>
-
-    {% endblock %}
+{% endblock %}
