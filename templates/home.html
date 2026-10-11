@@ -2,18 +2,21 @@
 
 {% block body %}
 
-
 <div class="three-column">
 
     {% for gpu in results %}
 
     <div class="w3-card-4">
 
-        <!-- the name then the image -->
+        <h2>{{ gpu[1] }} {{ gpu[2] }}</h2>
 
-        <h1>{{ gpu[1] }} {{ gpu[2] }}</h1>
-
-        <img src="{{ gpu[3] }}" alt="{{ gpu[2] }}">
+        <a href="{{ url_for('gpu_page', gpu_id=gpu[0]) }}">
+            <img
+                src="{{ url_for('static', filename='images/' ~ gpu[7]) }}"
+                alt="{{ gpu[1] }} {{ gpu[2] }}"
+                class="gpu-image"
+            >
+        </a>
 
     </div>
 
