@@ -12,5 +12,33 @@ JOIN game ON performance.game_id=game.game_id
 WHERE gpu.gpu_id = ?;
 
 
+ALTER TABLE gpu ADD COLUMN image TEXT;
 
-;
+UPDATE gpu SET image = 'rtx5090.png' WHERE name = 'RTX 5090';
+UPDATE gpu SET image = 'rtx4090.png' WHERE name = 'RTX 4090';
+UPDATE gpu SET image = 'rtx5080.png' WHERE name = 'RTX 5080';
+UPDATE gpu SET image = 'rtx5070.png' WHERE name = 'RTX 5070';
+UPDATE gpu SET image = 'rtx5070ti.png' WHERE name = 'RTX 5070 Ti';
+UPDATE gpu SET image = 'rtx5060ti.jpg' WHERE name = 'RTX 5060 Ti';
+UPDATE gpu SET image = 'rtx5060.jpg' WHERE name = 'RTX 5060';
+
+UPDATE gpu SET image = 'rtx4080super.png' WHERE name = 'RTX 4080 SUPER';
+UPDATE gpu SET image = 'rtx4080.png' WHERE name = 'RTX 4080';
+UPDATE gpu SET image = 'rtx4070tisuper.png' WHERE name = 'RTX 4070 Ti SUPER';
+UPDATE gpu SET image = 'rtx4070ti.png' WHERE name = 'RTX 4070 Ti';
+UPDATE gpu SET image = 'rtx4070super.png' WHERE name = 'RTX 4070 SUPER';
+UPDATE gpu SET image = 'rtx4070.png' WHERE name = 'RTX 4070';
+
+UPDATE gpu SET image = 'rtx4060ti.png' WHERE name = 'RTX 4060 Ti';
+UPDATE gpu SET image = 'rtx4060.png' WHERE name = 'RTX 4060';
+UPDATE gpu SET image = 'rtx3090.jpg' WHERE name = 'RTX 3090';
+UPDATE gpu SET image = 'rtx3080ti.png' WHERE name = 'RTX 3080 Ti';
+UPDATE gpu SET image = 'rtx3080.jpg' WHERE name = 'RTX 3080';
+UPDATE gpu SET image = 'rtx3070ti.jpg' WHERE name = 'RTX 3070 Ti';
+UPDATE gpu SET image = 'rtx3070.png' WHERE name = 'RTX 3070';
+UPDATE gpu SET image = 'rtx3060.jpg' WHERE name = 'RTX 3060';
+
+UPDATE gpu SET image = 'rx9070xt.png' WHERE name = 'RX 9070 XT';
+UPDATE gpu SET image = 'rx9070.png' WHERE name = 'RX 9070';
+UPDATE gpu SET image = 'rx7900xtx.jpg' WHERE name = 'RX 7900 XTX';
+UPDATE gpu SET image = 'rx7900xt.jpg' WHERE name = 'RX 7900 XT';

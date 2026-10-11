@@ -30,13 +30,46 @@ def home():
 
 @app.route('/gpu/<int:gpu_id>')
 def gpu_page(gpu_id):
-    db = get_db()
-    cursor = db.cursor()
-    sql = "JOIN performance ON performance.gpu_id=gpu.gpu_id JOIN game ON performance.game_id=game.game_id WHERE gpu.gpu_id = ?;"
-    cursor.execute(sql)
-    results = cursor.fetchall()
-    return  render_template("gpu.html", results=results) 
 
+    db = get_db()
+
+    cursor = db.cursor()
+
+    # Get GPU information
+    sql = """
+        SELECT *
+        FROM gpu
+        WHERE gpu_id = ?;
+    """
+
+    cursor.execute(sql, (gpu_id,))
+
+    gpu = cursor.fetchone()
+
+
+    # Get GPU performance
+    sql = """
+        SELECT
+            game.name,
+            performance.resolution,
+            performance.fps
+        FROM performance
+        JOIN game
+            ON performance.game_id = game.game_id
+        WHERE performance.gpu_id = ?
+        ORDER BY performance.fps DESC;
+    """
+
+    cursor.execute(sql, (gpu_id,))
+
+    performances = cursor.fetchall()
+
+
+    return render_template(
+        "gpu.html",
+        gpu=gpu,
+        performances=performances
+    )
 
     
   

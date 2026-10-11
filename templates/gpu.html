@@ -2,28 +2,75 @@
 
 {% block body %}
 
-
-
 <div class="two-column">
 
+    <!-- GPU IMAGE -->
+   <div class="gpu-image-container">
+    {% if gpu['image'] %}
+        <img
+            src="{{ url_for('static', filename='images/' ~ gpu['image']) }}"
+            alt="{{ gpu['name'] }}"
+            class="gpu-image"
+        >
+    {% else %}
+        <p class="no-image">GPU image coming soon.</p>
+    {% endif %}
+</div>
 
-    <img src="{{ gpu[6] }}" alt="{{ gpu[2] }}">
 
-  
+    <!-- GPU INFORMATION -->
     <div class="info">
 
-        <h1>{{ gpu[2] }}</h1>
+        <h1>{{ gpu[1] }}</h1>
 
-        <h1>Brand: {{ gpu[3] }}</h1>
+        <h2>Specifications</h2>
 
-        <h1>Cores: {{ gpu[4] }}</h1>
+        <table class="spec-table">
 
-        <h1>Description</h1>
+            <tr>
+                <th>Brand</th>
+                <td>{{ gpu[3] }}</td>
+            </tr>
 
-        <h1>{{ gpu[5] }}</h1>
+            <tr>
+                <th>Cores</th>
+                <td>{{ gpu[4] }}</td>
+            </tr>
+
+            <tr>
+                <th>Description</th>
+                <td>{{ gpu[5] }}</td>
+            </tr>
+
+        </table>
 
     </div>
 
 </div>
+
+
+<!-- PERFORMANCE -->
+
+<h2>Gaming Performance</h2>
+
+<table class="performance-table">
+
+    <tr>
+        <th>Game</th>
+        <th>Resolution</th>
+        <th>FPS</th>
+    </tr>
+
+    {% for performance in performances %}
+
+    <tr>
+        <td>{{ performance[0] }}</td>
+        <td>{{ performance[1] }}</td>
+        <td>{{ performance[2] }} FPS</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
 
 {% endblock %}
