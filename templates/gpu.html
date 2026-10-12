@@ -29,17 +29,27 @@
 
             <tr>
                 <th>Brand</th>
-                <td>{{ gpu[3] }}</td>
+                <td>{{ gpu[2] }}</td>
             </tr>
 
             <tr>
                 <th>Cores</th>
+                <td>{{ gpu[3] }}</td>
+            </tr>
+
+            <tr>
+                <th>Memory size</th>
                 <td>{{ gpu[4] }}</td>
             </tr>
 
             <tr>
-                <th>Description</th>
+                <th>Memory type</th>
                 <td>{{ gpu[5] }}</td>
+            </tr>
+
+            <tr>
+                <th>Boost clock</th>
+                <td>{{ gpu[6] }}</td>
             </tr>
 
         </table>
@@ -59,6 +69,7 @@
         <th>Game</th>
         <th>Resolution</th>
         <th>FPS</th>
+        <th>Settings</th>
     </tr>
 
     {% for performance in performances %}
@@ -67,6 +78,7 @@
         <td>{{ performance[0] }}</td>
         <td>{{ performance[1] }}</td>
         <td>{{ performance[2] }} FPS</td>
+        <td>{{ performance[3] }}</td>
     </tr>
 
     {% endfor %}

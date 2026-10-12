@@ -52,7 +52,8 @@ def gpu_page(gpu_id):
         SELECT
             game.name,
             performance.resolution,
-            performance.fps
+            performance.fps,
+            performance.settings
         FROM performance
         JOIN game
             ON performance.game_id = game.game_id

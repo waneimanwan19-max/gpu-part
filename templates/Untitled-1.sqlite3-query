@@ -42,3 +42,16 @@ UPDATE gpu SET image = 'rx9070xt.png' WHERE name = 'RX 9070 XT';
 UPDATE gpu SET image = 'rx9070.png' WHERE name = 'RX 9070';
 UPDATE gpu SET image = 'rx7900xtx.jpg' WHERE name = 'RX 7900 XTX';
 UPDATE gpu SET image = 'rx7900xt.jpg' WHERE name = 'RX 7900 XT';
+
+
+
+ SELECT
+            game.name,
+            performance.resolution,
+            performance.fps,
+            performance.settings
+        FROM performance
+        JOIN game
+            ON performance.game_id = game.game_id
+        WHERE performance.gpu_id = ?
+        ORDER BY performance.fps DESC;

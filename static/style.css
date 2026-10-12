@@ -1,5 +1,5 @@
 body,h1,h2,h3,h4,h5,h6 {
-    font-family: Righteous, sans-serif;
+    font-family: Righteous;
     color:#eef4ed;
 }
 
@@ -17,7 +17,6 @@ body{
     background-color:#37525f;
 }
 
-/* all images at 100% */
 img{
     width: 100%;
 }
@@ -45,12 +44,15 @@ img{
 
 .spec-table th,
 .performance-table th {
-    background-color:#787c84;
+    background-color:#64818F;
+    font-weight: bolder;
+    font-size: large;
+    font-family: Monospace;
+
+
 }
 
-.performance-table td:last-child {
-    font-weight: bold;
-}
+
 
 .gpu-image-container {
     width: 100%;
